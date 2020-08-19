@@ -3,11 +3,9 @@ import pandas as pd
 import sys
 import os
 
-
 """
 To run this file, put in the two required parameters [filename] and [target file size] as the 1st and 2nd argument. 
 """
-
 
 generator = Generator()
 filename = sys.argv[1] + '.txt'
