@@ -12,4 +12,4 @@ The Generator class will generate 4 kinds of alphanumeric strings:
 These strings will be appended to a file called test.txt. It is possible to set the size of the txt file depending on our requirements. Just put in the target filesize in the target_size parameter (set the size in Megabytes) of the generate_file method.
 The Generator also comes with a unittest which we can use with the command "python -m unittest".
 
-The main driver for the whole package of applications is available in main.py.
+The main driver for the whole package of applications is available in main.py. To run the whole app, run "python3 main.py [filename][target file size]"

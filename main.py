@@ -1,8 +1,18 @@
 from generator import Generator #import the Generator class made before this
 import pandas as pd
+import sys
+import os
+
+
+"""
+To run this file, put in the two required parameters [filename] and [target file size] as the 1st and 2nd argument. 
+"""
+
 
 generator = Generator()
-generator.generate_file('test.txt', 0.1)
+filename = sys.argv[1] + '.txt'
+target_size = float(sys.argv[2])
+generator.generate_file(filename, target_size)
 
 def checkElement(string):
     """This function checks whether a string is an Integer, an Alphabetical String, an Alphanumerical String, or a Real Numbner."""
@@ -37,6 +47,9 @@ def checkElement(string):
     elif isReal(string):
         print(string + ' - ' + 'real numbers')
         
-df = pd.read_csv('test.txt', header=None, dtype=str)
+df = pd.read_csv(sys.argv[1]+ '.txt', header=None, dtype=str)
+filesize = os.stat(filename).st_size
 
 df.applymap(checkElement)
+
+print('Generated ' + filename + ' of size ' + str(filesize/1000000) +'MB')
