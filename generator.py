@@ -40,7 +40,9 @@ class Generator:
     
     @staticmethod 
     def generate_file(filename, target_size):
-        """This function generates a printable random object with a given filename and expected size (in Megabytes)."""
+        """This function generates a printable random object with a given filename and expected size (in Megabytes). Params:
+        filename = the filename to write the file
+        target_size = the target size in MB of the file """
         open(filename, "w+") # create file
         file_stat = os.stat(filename)
         filesize = file_stat.st_size
